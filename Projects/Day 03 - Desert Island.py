@@ -113,8 +113,8 @@ Pondering, you find a boat and row away from the island.
 red = r'''
 Cautiously, you enter through the red glowing opening.
 The minimalistic design and the metal walls confuses you.
-You soon conclude that you are in a surgery room.
-Scared, you lock your eyes with an alien being.
+You look around, searching for meaning. 
+As you cross another opening, you lock your eyes with an a strange creature.
 Your mind is flooded with "You are next!".
 
               .-""""-.
@@ -148,8 +148,8 @@ Your mind is flooded with "You are next!".
 green = r'''
 Cautiously, you enter through the green glowing opening.
 An extraterrestrial being materializes right in front of you.
-"How dare you enter my spacecraft with your shoes on?" - he screams, telepathically.
-You fell your body becoming lighter, as particles flow through the air.
+"HOW DARE YOU ENTER MY SPACECRAFT WITH YOUR SHOES ON?" - he screams, telepathically.
+You feel your body becoming lighter, as particles flow through the air.
 In the same way it appeared, you are disappearing.
 
 .     .       .  .   . .   .   . .    +  .
@@ -188,7 +188,7 @@ It seems this spaceship belongs to the best space soccer team of the universe.
 A split second goes by.
 You grab one and start to run.
 Euphoria rushes through your blood as you imagine the resale value of alien gold.
-But then you remember, you are still on a desert island.
+Then you remember, you are still on a desert island.
 
              ___________
             '._==_==_=_.'
@@ -200,7 +200,7 @@ But then you remember, you are still on a desert island.
                  ) (
                _.' '._
               `"""""""`
-              YOU WIN!
+               YOU WIN!
 '''
 
 
