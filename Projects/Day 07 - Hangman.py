@@ -1,7 +1,11 @@
 import random
+import os # For the clear function
 # Download hangman_art.py and hangman_words.py (located on this repository) and move them to same folder of this file
 import hangman_art
 import hangman_words
+
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear') # 'cls' for Windows / 'clear' for Unix-based systems
 
 chosen_word = random.choice(hangman_words.word_list) # Choose one animal randomly from the list
 word_length = len(chosen_word)
@@ -19,6 +23,7 @@ for _ in range(word_length):
 
 while not end_of_game: # Runs until winning or losing condition
     guess = input("\nGuess a letter: ").lower()
+    clear() # Clears the console/terminal
 
     # Check if player repeats a guess
     if guess in display or guess in error_list:
