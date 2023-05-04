@@ -61,10 +61,10 @@ def calculator():
             keep_looping = False
             clear()
             calculator() # Recursion
-    old_answer = answer
-    new_operation_symbol = input('Pick an operation: ')
-    new_num = float(input('What is the next number? '))
-    answer = operations[new_operation_symbol](answer, new_num)
-    print(f'{old_answer} {new_operation_symbol} {new_num} = {answer}')
+        old_answer = answer
+        new_operation_symbol = input('Pick an operation: ')
+        new_num = float(input('What is the next number? '))
+        answer = operations[new_operation_symbol](answer, new_num)
+        print(f'{old_answer} {new_operation_symbol} {new_num} = {answer}')
 
 calculator() # Start the program
