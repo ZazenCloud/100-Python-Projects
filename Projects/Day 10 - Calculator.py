@@ -47,24 +47,21 @@ def calculator():
     num1 = float(input('What is the first number? '))
     for symbol in operations:
         print(symbol)
-    operation_symbol = input('Pick an operation from the line above: ')
-    num2 = float(input('What is the second number? '))
-    answer = operations[operation_symbol](num1, num2) # Calculate the answer using the chosen operation
-  
-    print(f'{num1} {operation_symbol} {num2} = {answer}')
-  
-    keep_looping = True # Set a flag to keep looping
-  
+    keep_looping = True # Flag to keep looping    
+    
     while keep_looping:
+        operation_symbol = input('Pick an operation: ')
+        num2 = float(input('What is the next number? '))
+        answer = operations[operation_symbol](num1, num2) # Calculate the answer using the chosen operation
+        
+        print(f'{num1} {operation_symbol} {num2} = {answer}')
+        
         cont = input(f"Type 'y' to continue calculating with {answer}, or type 'n' to start over.\n") 
-        if cont == 'n': # Loop until the user chooses to start over
+        if cont == 'y': # Loop until the user chooses to start over
+            num1 = answer # Previous answer takes the place of num1 on the f-string
+        else:
             keep_looping = False
             clear()
             calculator() # Recursion
-        old_answer = answer
-        new_operation_symbol = input('Pick an operation: ')
-        new_num = float(input('What is the next number? '))
-        answer = operations[new_operation_symbol](answer, new_num)
-        print(f'{old_answer} {new_operation_symbol} {new_num} = {answer}')
 
 calculator() # Start the program
