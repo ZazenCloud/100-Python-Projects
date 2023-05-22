@@ -27,6 +27,7 @@ class Ball(Turtle):
         self.penup()
         self.x_move = 10
         self.y_move = 10
+        self.move_speed = 0.1
 
     def move(self):
         new_x = self.xcor() + self.x_move
@@ -34,13 +35,17 @@ class Ball(Turtle):
         self.goto(new_x, new_y)
 
     def bounce_y(self):
+        # Reverse the direction of the y-axis movement for bouncing off a wall
         self.y_move *= -1
 
     def bounce_x(self):
+        # Reverse the direction of the x-axis movement for bouncing off a paddle
         self.x_move *= -1
+        self.move_speed *= 0.9
 
     def reset_position(self):
         self.goto(0, 0)
+        self.move_speed = 0.1
         self.bounce_x()
 
 
