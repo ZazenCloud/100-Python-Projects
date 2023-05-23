@@ -1,6 +1,7 @@
 import time
 from turtle import Screen
-from player import Player, Scoreboard, CarManager
+# Download turtle_crossing.py (located on this repository) and move it to same folder of this file
+from turtle_crossing import Player, Scoreboard, CarManager
 
 screen = Screen()
 screen.setup(width=600, height=600)
