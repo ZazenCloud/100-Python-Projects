@@ -1,4 +1,5 @@
 from turtle import Screen
+# Download pong.py (located on this repository) and move it to same folder of this file
 from pong import Paddle, Ball, Scoreboard
 import time
 
