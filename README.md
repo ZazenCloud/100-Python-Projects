@@ -88,3 +88,19 @@ Projects for the 100 Days of Code - Python
 [Day 22 - Pong Game](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2022%20-%20Pong%20Game.py)
   Image
   Concepts learned
+
+[Day 23 - Turtle Crossing Game](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2023%20-%20Turtle%20Crossing%20Game.py)
+  Image
+  Concepts learned
+
+[Day 24 - Mail Merge](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2024%20-%20Mail%20Merge.py)
+  Image
+  Concepts learned
+
+[Day 25 - USA States Game](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2025%20-%20USA%20States%20Game.py)
+  Image
+  Concepts learned
+
+[Day 26 - NATO Phonetic Alphabet](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2026%20-%20NATO%20Phonetic%20Alphabet.py)
+  Image
+  Concepts learned
