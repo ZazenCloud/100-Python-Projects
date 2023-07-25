@@ -104,3 +104,139 @@ Projects for the 100 Days of Code - Python
 [Day 26 - NATO Phonetic Alphabet](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2026%20-%20NATO%20Phonetic%20Alphabet.py)
   Image
   Concepts learned
+
+[Day 27 - Mile to Km Converter](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2027%20-%20Mile%20to%20Km%20Converter.py)
+  Image
+  Concepts learned
+
+[Day 28 - Pomodoro Timer](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2028%20-%20Pomodoro%20Timer.py)
+  Image
+  Concepts learned
+
+[Day 29 - Password Manager](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2029%20-%20Password%20Manager.py)
+  Image
+  Concepts learned
+
+[Day 30 - Password Manager v2](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2030%20-%20Password%20Manager%20v2.py)
+  Image
+  Concepts learned
+
+[Day 31 - Flashcard App](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2031%20-%20Flashcard%20App.py)
+  Image
+  Concepts learned
+
+[Day 32 - Automated Birthday Wisher](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2032%20-%20Automated%20Birthday%20Wisher.py)
+  Image
+  Concepts learned
+
+[Day 33 - ISS Overhead Notifier](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2033%20-%20ISS%20Overhead%20Notifier.py)
+  Image
+  Concepts learned
+
+[Day 34 - Quizzler](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2034%20-%20Quizzler.py)
+  Image
+  Concepts learned
+
+[Day 35 - Rain Alert SMS](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2035%20-%20Rain%20Alert%20SMS.py)
+  Image
+  Concepts learned
+
+[Day 36 - Stock News SMS Alert](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2036%20-%20Stock%20News%20SMS%20Alert.py)
+  Image
+  Concepts learned
+
+[Day 37 - Habit Tracking](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2037%20-%20Habit%20Tracking.py)
+  Image
+  Concepts learned
+
+[Day 38 - Workout Tracker](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2038%20-%20Workout%20Tracker.py)
+  Image
+  Concepts learned
+
+[Day 39 - Flight Deal Finder](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2039%20-%20Flight%20Deal%20Finder.py)
+  Image
+  Concepts learned
+
+[Day 40 - Flight Club](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2040%20-%20Flight%20Club.py)
+  Image
+  Concepts learned
+
+[Day 41 - Personal HTML Page](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2041%20-%20Personal%20HTML%20Page.html)
+  Image
+  Concepts learned
+
+[Day 42 - Personal HTML Page v2](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2042%20-%20Personal%20HTML%20Page%20v2.html)
+  Image
+  Concepts learned
+
+[Day 43 - NPersonal HTML + CSS Page](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2043%20-%20Personal%20HTML%20%2B%20CSS%20Page.html)
+  Image
+  Concepts learned
+
+[Day 44 - Personal HTML + CSS Page v2](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2044%20-%20Personal%20HTML%20%2B%20CSS%20Page%20v2.html)
+  Image
+  Concepts learned
+
+[Day 45 - 100 Movies that You Must Watch](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2045%20-%20100%20Movies%20that%20You%20Must%20Watch.py)
+  Image
+  Concepts learned
+
+[Day 46 - Musical Time Machine](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2046%20-%20Musical%20Time%20Machine.py)
+  Image
+  Concepts learned
+
+[Day 47 - AliExpress Price Tracker](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2047%20-%20AliExpress%20Price%20Tracker.py)
+  Image
+  Concepts learned
+
+[Day 48 - Cookie (Auto) Clicker](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2048%20-%20Cookie%20(Auto)%20Clicker.py)
+  Image
+  Concepts learned
+
+[Day 49 - Auto Job Application](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2049%20-%20Auto%20Job%20Application.py)
+  Image
+  Concepts learned
+
+[Day 50 - Auto Tinder Like](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2050%20-%20Auto%20Tinder%20Like.py)
+  Image
+  Concepts learned
+
+[Day 51 - Internet Speed Twitter Complaint Bot](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2051%20-%20Internet%20Speed%20Twitter%20Complaint%20Bot.py)
+  Image
+  Concepts learned
+
+[Day 52 - Instagram Follower Bot](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2052%20-%20Instagram%20Follower%20Bot.py)
+  Image
+  Concepts learned
+
+[Day 53 - Zillow Rental Research](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2053%20-%20Zillow%20Rental%20Research.py)
+  Image
+  Concepts learned
+
+[Day 54 - Python Decorator Practice](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2054%20-%20Python%20Decorator%20Practice.py)
+  Image
+  Concepts learned
+
+[Day 55 - Higher Lower Game (Flask Edition)](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2055%20-%20Higher%20Lower%20Game%20(Flask%20Edition)%20.py)
+  Image
+  Concepts learned
+
+[Day 56 - Name Card](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2056%20-%20Name%20Card.zip)
+  Image
+  Concepts learned
+
+[Day 57 - Blog v1](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2057%20-%20Blog%20v1.rar)
+  Image
+  Concepts learned
+
+[Day 58 - TinDog](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2058%20-%20TinDog.rar)
+  Image
+  Concepts learned
+
+[Day 59 - Blog v2](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2059%20-%20Blog%20v2.rar)
+  Image
+  Concepts learned
+
+[Day 60 - Blog v3](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2060%20-%20Blog%20v3.rar)
+  Image
+  Concepts learned
