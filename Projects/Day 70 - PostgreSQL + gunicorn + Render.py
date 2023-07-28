@@ -1,0 +1,74 @@
+"""
+# Starting #
+
+This guide uses the last Blog lesson (Day 69) as the project to be deployed
+
+First, pip install gunicorn and psycopg2 in your environment
+"pip install gunicorn"
+"pip install psycopg2-binary"
+
+Secondly, add "import os" to your main.py
+Then change
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+to an Environment Variable
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
+
+
+# Using VS Code #
+
+Suggested extensions:
+gitignore
+https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore
+Git History
+https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory
+
+- Open your project folder
+- CTRL + SHIFT + G (or go to View -> Source Control) to open Source Control
+- "Create Repository"
+- CTRL + SHIFT + P (or go to View  -> Command Palette) -> "Add gitignore" -> "Python" -> ENTER
+- Open the terminal (CTRL + ` or View -> Terminal)
+- Write "pip freeze > requirements.txt" -> ENTER
+- On the Source Control tab, press the + sign to add the files to the Staging Area
+- "Commit"
+- "Publish Branch"
+- Connect your GitHub account
+
+
+# Using Render to deploy #
+
+- Create an account at https://render.com/
+- Go to https://dashboard.render.com/new/database
+- "Name:" Write a unique name
+- "Create Database"
+- Wait until it is available
+- Copy the "Internal Database URL"
+- Paste it on a .txt file (or similar)
+- Change "postgres" at the beginning of the string to "postgresql"
+- Store it temporarily
+- Go to https://dashboard.render.com/select-repo?type=web
+- "Connect GitHub"
+- "Authorize Render"
+- "Install"
+- Go to https://dashboard.render.com/select-repo?type=web again
+(after installing, it goes back to the dashboard)
+- Search for your repository and click "Connect"
+- "Name:" Write a unique name
+- "Build Command:" pip install -r requirements.txt
+- "Start Command:" gunicorn main:app
+- "Create Web Service"
+- Some pip packages version errors can occur, adjust accordingly
+e.g. `ERROR: Could not find a version that satisfies the requirement Werkzeug==2.3.6`
+Copy the last one in the error list (2.2.3 in this case)
+Go to the requirements.txt and substitute "Werkzeug==2.3.6" to "Werkzeug==2.2.3"
+Add, Commit and Sync via VS Code Source Control
+Deploy your files again via Render.com
+- If all pip packages are installed correctly, this error will occur:
+`Error: Either 'SQLALCHEMY_DATABASE_URI' or 'SQLALCHEMY_BINDS' must be set.`
+- Click on "Environment" in the left menu
+- "Add Environment Variable"
+- Set "Key" to "DATABASE_URL"
+- Set "Value" to your stored Internal Database URL
+- Click on "Events" in the left menu
+- Wait, Render.com will automatically try to deploy it again
+- Done, your link is available at the top, below your GitHub repository
+"""
