@@ -91,6 +91,8 @@ print(best_20_meaning[['Major', '% High Meaning']].head(20))
 
 print("\n------------------------------------------------------------------\n")
 
+# Filter rows with no data in this column (value == 0)
+df = df[df['% High Meaning'] != 0]
 print("Bottom 20 Majors by % High Meaning\n")
 # Sort the DataFrame by '% High Meaning' column in ascending order
 worst_20_meaning = df.sort_values('% High Meaning')
