@@ -240,3 +240,66 @@ Projects for the 100 Days of Code - Python
 [Day 60 - Blog v3](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2060%20-%20Blog%20v3.rar)
   Image
   Concepts learned
+
+[Day 61 - Flask + WTForms](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2061%20-%20Flask%20%2B%20WTForms.rar)
+  Image
+  Concepts learned
+
+[Day 62 - Coffee & Wifi](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2062%20-%20Coffee%20%26%20Wifi.rar)
+  Image
+  Concepts learned
+
+[Day 63 - Virtual Bookshelf](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2063%20-%20Virtual%20Bookshelf.rar)
+  Image
+  Concepts learned
+
+[Day 64 - Top 10 Movies Website](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2064%20-%20Top%2010%20Movies%20Website.rar)
+  Image
+  Concepts learned
+
+[Day 65 - The Gran Hotel](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2065%20-%20The%20Gran%20Hotel.zip)
+  Image
+  Concepts learned
+
+[Day 66 - Cafe & Wifi API](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2066%20-%20Cafe%20%26%20Wifi%20API.rar)
+  Image
+  Concepts learned
+
+[Day 67 - Blog v4](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2067%20-%20Blog%20v4.rar)
+  Image
+  Concepts learned
+
+[Day 68 - Flask Authentication](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2068%20-%20Flask%20Authentication.rar)
+  Image
+  Concepts learned
+
+[Day 69 - Blog v5](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2069%20-%20Blog%20v5.rar)
+  Image
+  Concepts learned
+
+[Day 70 - PostgreSQL + gunicorn + Render](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2070%20-%20PostgreSQL%20%2B%20gunicorn%20%2B%20Render.py)
+  Image
+
+[Day 71 - Highest Paying Jobs (2021)](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2071%20-%20Highest%20Paying%20Jobs%20(2021).py)
+  Image
+  Concepts learned
+
+[Day 72 - Data Visualisation with Matplotlib (Programming Languages)](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2072%20-%20Data%20Visualisation%20with%20Matplotlib%20(Programming%20Languages).py)
+  Image
+  Concepts learned
+
+[Day 73 - LEGO Dataset](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2073%20-%20LEGO%20Dataset.rar)
+  Image
+  Concepts learned
+
+[Day 74 - Google Trends](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2074%20-%20Google%20Trends.rar)
+  Image
+  Concepts learned
+
+[Day 75 - Beautiful Plotly Charts](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2075%20-%20Beautiful%20Plotly%20Charts.rar)
+  Image
+  Concepts learned
+
+[Day 76 - NumPy and N-Dimensional Arrays](https://github.com/ZazenCloud/100-Python-Projects/blob/main/Projects/Day%2076%20-%20NumPy%20and%20N-Dimensional%20Arrays.rar)
+  Image
+  Concepts learned
