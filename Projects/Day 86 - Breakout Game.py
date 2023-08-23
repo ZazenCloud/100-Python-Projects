@@ -1,0 +1,3 @@
+# Testing verified Git commit via VS Code
+# ... 
+#
