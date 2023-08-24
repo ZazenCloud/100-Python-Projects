@@ -23,7 +23,10 @@ login_button.click()
 # Click on the "Continue with Facebook" button
 FB_sign_in = WebDriverWait(driver, 20).until(
     EC.element_to_be_clickable(
-        (By.XPATH, '//*[@id="q2069402257"]/main/div/div/div[1]/div/div/div[3]/span/div[2]/button')
+        (
+            By.XPATH,
+            '//*[@id="q2069402257"]/main/div/div/div[1]/div/div/div[3]/span/div[2]/button'
+        )
         )
     )
 FB_sign_in.click()
@@ -69,7 +72,12 @@ time.sleep(5)
 
 # Click on the "I Decline" button
 i_decline = WebDriverWait(driver, 20).until(
-EC.element_to_be_clickable((By.XPATH, '//*[@id="q-497183963"]/div/div[2]/div/div/div[1]/div[2]/button'))
+    EC.element_to_be_clickable(
+        (
+            By.XPATH,
+            '//*[@id="q-497183963"]/div/div[2]/div/div/div[1]/div[2]/button'
+        )
+    )
 )
 i_decline.click()
 
@@ -77,7 +85,9 @@ time.sleep(5)
 
 # Find the "Like" button
 like_button = driver.find_element(
-    By.XPATH, '//*[@id="q-497183963"]/div/div[1]/div/main/div[1]/div/div/div[1]/div[1]/div/div[3]/div/div[4]/button')
+    By.XPATH,
+    '//*[@id="q-497183963"]/div/div[1]/div/main/div[1]/div/div/div[1]/div[1]/div/div[3]/div/div[4]/button'
+)
 
 # 100 likes
 for i in range(100):
@@ -92,5 +102,5 @@ for i in range(100):
             match_popup.click()
         except NoSuchElementException:
             time.sleep(2)
-            
+
 driver.quit()

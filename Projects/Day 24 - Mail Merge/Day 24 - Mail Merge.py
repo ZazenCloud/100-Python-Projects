@@ -12,6 +12,8 @@ with open("./Input/Letters/starting_letter.txt") as letter_file:
         # Replace the placeholder with the current name in the letter template
         final_letter = letter.replace("[name]", stripped_name)
         # Create a new file for the personalized letter
-        with open(f"./Output/ReadyToSend/letter_for_{stripped_name}.txt", "w") as named_letter:
+        with open(
+            f"./Output/ReadyToSend/letter_for_{stripped_name}.txt", "w"
+        ) as named_letter:
             # Write the personalized letter to the file
             named_letter.write(final_letter)

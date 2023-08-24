@@ -28,7 +28,15 @@ def add_watermark(image, watermark):
     x, y = int(image_width / 2), int(image_height / 2)
 
     # Add the watermark
-    draw.text((x, y), watermark, font=font, fill='#FFF', stroke_width=5, stroke_fill='#222', anchor='ms')
+    draw.text(
+        (x, y),
+        watermark,
+        font=font,
+        fill='#FFF',
+        stroke_width=5,
+        stroke_fill='#222',
+        anchor='ms'
+    )
 
     # Show the new image
     opened_image.show()

@@ -1,7 +1,9 @@
-"""
 # Starting #
 
 This guide uses the last Blog lesson (Day 69) as the project to be deployed
+
+Since the lesson use old resources that are not free anymore (e.g. Heroku)... 
+I decided to create this guide, in hope that it can help other students
 
 First, pip install gunicorn and psycopg2 in your environment
 "pip install gunicorn"
@@ -71,4 +73,3 @@ Deploy your files again via Render.com
 - Click on "Events" in the left menu
 - Wait, Render.com will automatically try to deploy it again
 - Done, your link is available at the top, below your GitHub repository
-"""

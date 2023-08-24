@@ -39,7 +39,8 @@ class Ball(Turtle):
         self.y_move *= -1
 
     def bounce_x(self):
-        # Reverse the direction of the x-axis movement for bouncing off a paddle
+        # Reverse the direction of the x-axis
+        # movement for bouncing off a paddle
         self.x_move *= -1
         self.move_speed *= 0.9
 
@@ -63,9 +64,13 @@ class Scoreboard(Turtle):
     def update_scoreboard(self):
         self.clear()
         self.goto(-100, 200)
-        self.write(self.l_score, align="center", font=("Courier", "80", "normal"))
+        self.write(
+            self.l_score, align="center", font=("Courier", "80", "normal")
+        )
         self.goto(100, 200)
-        self.write(self.r_score, align="center", font=("Courier", "80", "normal"))
+        self.write(
+            self.r_score, align="center", font=("Courier", "80", "normal")
+        )
 
     def l_point(self):
         self.l_score += 1

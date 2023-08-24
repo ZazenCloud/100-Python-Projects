@@ -78,8 +78,12 @@ ax1.xaxis.set_major_locator(years)
 ax1.xaxis.set_major_formatter(years_fmt)
 ax1.xaxis.set_minor_locator(months)
 
-ax1.plot(df_tesla.MONTH, df_tesla.TSLA_USD_CLOSE, color='#E52020', linewidth=3)
-ax2.plot(df_tesla.MONTH, df_tesla.TSLA_WEB_SEARCH, color='skyblue', linewidth=3)
+ax1.plot(
+    df_tesla.MONTH, df_tesla.TSLA_USD_CLOSE, color='#E52020', linewidth=3
+)
+ax2.plot(
+    df_tesla.MONTH, df_tesla.TSLA_WEB_SEARCH, color='skyblue', linewidth=3
+)
 
 plt.show()
 

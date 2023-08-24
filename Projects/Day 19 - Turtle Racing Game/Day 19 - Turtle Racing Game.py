@@ -5,8 +5,8 @@ screen = Screen()
 screen.setup(width=500, height=400)
 user_bet = screen.textinput(
   title="Make your bet!",
-  prompt=
-  "Which turtle will win the race? \n\nChoose a color:\nBlack - Red - Green - Blue"
+  prompt="Which turtle will win the race? "
+  "\n\nChoose a color:\nBlack - Red - Green - Blue"
 )
 print(user_bet)
 colors = ["blue", "green", "red", "black"]
@@ -33,8 +33,12 @@ while game_running:
             game_running = False
             winning_turtle = turtle.pencolor()
             if winning_turtle == user_bet.lower():
-                print(f"You've won! The {winning_turtle} turtle is the winner!")
+                print(
+                    f"You've won! The {winning_turtle} turtle is the winner!"
+                )
             else:
-                print(f"You've lost! The {winning_turtle} turtle is the winner!")
+                print(
+                    f"You've lost! The {winning_turtle} turtle is the winner!"
+                )
 
 screen.exitonclick()

@@ -1,11 +1,13 @@
-from flask import Flask, render_template, redirect, url_for, flash, abort, request
+from flask import Flask, render_template, redirect, url_for, flash, abort
+from flask import request
 from flask_bootstrap import Bootstrap
 from flask_ckeditor import CKEditor
 from datetime import date
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import relationship
-from flask_login import UserMixin, login_user, LoginManager, current_user, logout_user
+from flask_login import UserMixin, login_user, LoginManager
+from flask_login import current_user, logout_user
 from forms import CreatePostForm, NewUserForm, LoginForm, CommentForm
 from flask_gravatar import Gravatar
 from sqlalchemy.exc import IntegrityError
@@ -242,8 +244,8 @@ def contact():
         data = request.form
         client_name = data["name"]
         client_email = data["email"]
-        client_phone = data["phone"]
-        client_msg = data["message"]
+        # client_phone = data["phone"]
+        # client_msg = data["message"]
         # Structure email
         message = EmailMessage()
         message['From'] = MY_EMAIL

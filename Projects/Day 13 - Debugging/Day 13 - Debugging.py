@@ -23,9 +23,9 @@ SyntaxError: invalid syntax
 number = int(input("Which number do you want to check? "))
 
 if number % 2 == 0:
-  print("This is an even number.")
+    print("This is an even number.")
 else:
-  print("This is an odd number.")
+    print("This is an odd number.")
 
 
 # Problem 2
@@ -42,7 +42,7 @@ if year % 4 == 0:
   else:
     print("Leap year.")
 else:
-  print("Not leap year.")  
+  print("Not leap year.")
 '''
 
 '''
@@ -59,18 +59,18 @@ TypeError: not all arguments converted during string formatting
 year = int(input("Which year do you want to check?"))
 
 if year % 4 == 0:
-  if year % 100 == 0:
-    if year % 400 == 0:
-      print("Leap year.")
+    if year % 100 == 0:
+        if year % 400 == 0:
+            print("Leap year.")
+        else:
+            print("Not leap year.")
     else:
-      print("Not leap year.")
-  else:
-    print("Leap year.")
+        print("Leap year.")
 else:
-  print("Not leap year.")
+    print("Not leap year.")
 
 
-# Problem 3  
+# Problem 3
 
 '''
 for number in range(1, 101):
@@ -94,21 +94,23 @@ Fizz
 ...
 '''
 
-# OR statement in line 2 will print "FizzBuzz" for every number divisible by 3 OR 5
+# OR statement in line 2 will print "FizzBuzz" for
+# very number divisible by 3 OR 5
 # It should be an AND statement
 
-# There are multiple if statements being triggered 
-# Elif statements should be implemented instead of the second and third if statement
+# There are multiple if statements being triggered
+# Elif statements should be implemented
+# instead of the second and third if statement
 
-# The number variable is enclosed in brackets in the last print statement 
+# The number variable is enclosed in brackets in the last print statement
 # Removing the brackets makes the code cleaner
 
 for number in range(1, 101):
-  if number % 3 == 0 and number % 5 == 0:
-    print("FizzBuzz")
-  elif number % 3 == 0:
-    print("Fizz")
-  elif number % 5 == 0:
-    print("Buzz")
-  else:
-    print(number)
+    if number % 3 == 0 and number % 5 == 0:
+        print("FizzBuzz")
+    elif number % 3 == 0:
+        print("Fizz")
+    elif number % 5 == 0:
+        print("Buzz")
+    else:
+        print(number)

@@ -1,9 +1,6 @@
 import tkinter as tk
 import pandas
 import random
-# Download flash_wrong.png, flash_right.png, flash_back.png, flash_front.png
-# and french_words.csv (located on this repository)
-# then move them to same folder of this file
 
 BACKGROUND_COLOR = "#B1DDC6"
 LANGUAGE_FONT = ("Arial", 40, "italic")
@@ -69,17 +66,23 @@ canvas = tk.Canvas(width=800, height=526)
 front_img = tk.PhotoImage(file="flash_front.png")
 back_img = tk.PhotoImage(file="flash_back.png")
 card = canvas.create_image(400, 263, image=front_img)
-language = canvas.create_text(400, 150, text="", fill="black", font=LANGUAGE_FONT)
+language = canvas.create_text(
+    400, 150, text="", fill="black", font=LANGUAGE_FONT
+)
 word = canvas.create_text(400, 263, text="", fill="black", font=WORD_FONT)
 canvas.config(bg=BACKGROUND_COLOR, highlightthickness=0)
 canvas.grid(column=0, row=0, columnspan=2)
 
 # Buttons
 wrong_img = tk.PhotoImage(file="flash_wrong.png")
-wrong_button = tk.Button(image=wrong_img, highlightthickness=0, command=random_french_word)
+wrong_button = tk.Button(
+    image=wrong_img, highlightthickness=0, command=random_french_word
+)
 wrong_button.grid(column=0, row=1)
 right_img = tk.PhotoImage(file="flash_right.png")
-right_button = tk.Button(image=right_img, highlightthickness=0, command=known_word)
+right_button = tk.Button(
+    image=right_img, highlightthickness=0, command=known_word
+)
 right_button.grid(column=1, row=1)
 
 random_french_word()

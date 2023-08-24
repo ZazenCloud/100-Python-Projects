@@ -32,7 +32,7 @@ data = [
     {
         'name': 'Kylie Jenner',
         'follower_count': 172,
-        'description': 'Reality TV personality and businesswoman and Self-Made Billionaire',
+        'description': 'Reality TV personality and businesswoman',
         'country': 'United States'
     },
     {

@@ -19,8 +19,11 @@ driver.get("https://orteil.dashnet.org/cookieclicker/")
 # and a polling frequency of 0.5 seconds
 wait = WebDriverWait(driver, timeout=10, poll_frequency=0.5)
 
-# Wait for the "Got it!" element to be clickable and then click it to accept cookies
-accept_cookies = wait.until(EC.element_to_be_clickable((By.LINK_TEXT, "Got it!")))
+# Wait for the "Got it!" element to be
+# clickable and then click it to accept cookies
+accept_cookies = wait.until(
+    EC.element_to_be_clickable((By.LINK_TEXT, "Got it!"))
+)
 accept_cookies.click()
 
 # Find the "English" language option element and click on it
@@ -29,7 +32,9 @@ language.click()
 
 # Wait for the save pop-up element to be visible
 # and then click on it to close the pop-up
-close_popup = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".note.haspic .close")))
+close_popup = wait.until(
+    EC.visibility_of_element_located((By.CSS_SELECTOR, ".note.haspic .close"))
+)
 close_popup.click()
 
 # Find the big cookie element
@@ -47,11 +52,15 @@ def get_buildings_info():
     price_list = []
 
     # Find all the unlocked building elements
-    buildings = driver.find_elements(By.CSS_SELECTOR, ".product.unlocked.enabled")
+    buildings = driver.find_elements(
+        By.CSS_SELECTOR, ".product.unlocked.enabled"
+    )
 
     for building in buildings:
         # Locate the <div> with the price and ID info
-        building_element = building.find_element(By.CSS_SELECTOR, ".content .price")
+        building_element = building.find_element(
+            By.CSS_SELECTOR, ".content .price"
+        )
         # Get the building ID attribute
         building_id = building_element.get_attribute("id")
         # Append the building ID to the id_list
@@ -74,7 +83,9 @@ while True:
 
     if elapsed_time >= random_time:
         # Click on available upgrades
-        upgrades = driver.find_elements(By.CSS_SELECTOR, ".crate.upgrade.enabled")
+        upgrades = driver.find_elements(
+            By.CSS_SELECTOR, ".crate.upgrade.enabled"
+        )
         for upgrade in upgrades:
             # to avoid a stale element
             upgrade_id = upgrade.get_attribute("id")

@@ -37,7 +37,9 @@ shutdown = False
 
 
 def print_report():
-    '''Prints the current amount of resources and money in the coffee machine.'''
+    '''
+    Prints the current amount of resources and money in the coffee machine.
+    '''
     print(f'Water: {resources["water"]}ml')
     print(f'Milk: {resources["milk"]}ml')
     print(f'Coffee: {resources["coffee"]}ml')
@@ -79,7 +81,9 @@ def update_resources(order_ingredients):
 
 
 while not shutdown:
-    choice = input('What would you like? (espresso/latte/cappuccino): ').lower()
+    choice = input(
+        'What would you like? (espresso/latte/cappuccino): '
+    ).lower()
     if choice == 'report':
         # Prints the current resources and money
         print_report()

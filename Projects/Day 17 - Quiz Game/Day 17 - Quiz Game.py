@@ -6,7 +6,8 @@ from quiz_brain import QuizBrain, Question
 # Empty list to store the question objects
 question_bank = []
 
-# Loop through the question data and create a new Question object for each question
+# Loop through the question data and create
+# a new Question object for each question
 for question in question_data:
     # Extract the question text and answer from the dictionary
     question_text = question["question"]

@@ -54,7 +54,11 @@ while not end_of_game:
                 print("\nHint: it's an animal!")
             if lives == 2 and hint_two == 0:
                 # Hint 2 after losing 4 lives
-                print(f'\nHint: it starts with {chosen_word[0]} and ends with {chosen_word[word_length - 1]}.') # Reveals first and last letters
+                # Reveals first and last letters
+                print(
+                    f'\nHint: it starts with {chosen_word[0]} and ends with '
+                    f'{chosen_word[word_length - 1]}.'
+                )
                 hint_two += 1
         if lives == 0:
             end_of_game = True

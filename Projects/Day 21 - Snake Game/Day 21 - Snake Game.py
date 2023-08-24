@@ -1,5 +1,4 @@
 from turtle import Screen
-# Download snake.py (located on this repository) and move it to same folder of this file
 from snake import Snake, Food, Scoreboard
 import time
 
@@ -39,7 +38,10 @@ while game_running:
         scoreboard.score_point()
 
     # Detect collision with wall
-    if snake.head.xcor() > 285 or snake.head.xcor() < -285 or snake.head.ycor() > 285 or snake.head.ycor() < -285:
+    if (
+        snake.head.xcor() > 285 or snake.head.xcor() < -285
+        or snake.head.ycor() > 285 or snake.head.ycor() < -285
+    ):
         game_running = False
         scoreboard.game_over()
 

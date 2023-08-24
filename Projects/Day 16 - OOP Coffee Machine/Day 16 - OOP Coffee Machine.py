@@ -1,5 +1,3 @@
-# Download oop_cm_resources.py (located on this repository)
-# And move it to same folder of this file
 from oop_cm_resources import Menu, CoffeeMaker, MoneyMachine
 
 # Flag for whether the program should shut down or continue running

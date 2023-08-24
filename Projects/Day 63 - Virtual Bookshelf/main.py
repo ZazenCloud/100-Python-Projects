@@ -26,6 +26,7 @@ def home():
         all_books = None
     return render_template("index.html", books=all_books)
 
+
 # Handle adding a new book to the database
 @app.route("/add", methods=["GET", "POST"])
 def add():
@@ -42,6 +43,7 @@ def add():
         return redirect(url_for("home"))
     return render_template("add.html")
 
+
 # Handle editing the rating of a book
 @app.route("/edit", methods=["GET", "POST"])
 def edit():
@@ -55,6 +57,7 @@ def edit():
     book_id = request.args.get('id')
     selected_book = Book.query.get(book_id)
     return render_template("edit.html", book=selected_book)
+
 
 # Handle deleting a book from the database
 @app.route("/delete")

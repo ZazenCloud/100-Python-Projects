@@ -3,9 +3,6 @@ import smtplib
 from email.message import EmailMessage
 import datetime as dt
 import random
-# Download letter_1.txt, letter_2.txt, letter_3.txt and
-# users_birthdays.csv (located on this repository)
-# then move them to same folder of this file
 
 my_email = "youremail@here.com"
 my_password = "yourpassword"

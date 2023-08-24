@@ -131,8 +131,8 @@ def contact():
         data = request.form
         client_name = data["name"]
         client_email = data["email"]
-        client_phone = data["phone"]
-        client_msg = data["message"]
+        # client_phone = data["phone"]
+        # client_msg = data["message"]
         # Structure email
         message = EmailMessage()
         message['From'] = MY_EMAIL

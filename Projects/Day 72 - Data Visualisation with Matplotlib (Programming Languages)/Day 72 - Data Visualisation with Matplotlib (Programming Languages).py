@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-# Download QueryResults.csv (located on this repository)
-# and move it to same folder of this file
+
+# QueryResults.csv
 # Source: https://data.stackexchange.com/stackoverflow/query/675441/popular-programming-languages-per-over-time-eversql-com
 
 # Read data from CSV file and create a DataFrame

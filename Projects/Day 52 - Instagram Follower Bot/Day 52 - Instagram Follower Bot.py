@@ -24,7 +24,9 @@ class InstaFollower():
         # Open the Instagram login page
         self.driver.get("https://www.instagram.com/accounts/login/")
         # Find the username field and enter the Instagram account username
-        username = self.wait.until(EC.element_to_be_clickable((By.NAME, "username")))
+        username = self.wait.until(
+            EC.element_to_be_clickable((By.NAME, "username"))
+        )
         username.click()
         username.send_keys(INSTAGRAM_ACCOUNT)
         # Find the password field and enter the Instagram account password
@@ -32,11 +34,16 @@ class InstaFollower():
         password.click()
         password.send_keys(INSTAGRAM_PASSWORD)
         # Find the submit button and click it to log in
-        submit = self.driver.find_element(By.CSS_SELECTOR, "button[type*='submit']")
+        submit = self.driver.find_element(
+            By.CSS_SELECTOR, "button[type*='submit']"
+        )
         submit.click()
         try:
-            # Check if the "Turn On Notifications" dialog is displayed, close it if found
-            notifications_off = self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "._a9--._a9_1")))
+            # Check if the "Turn On Notifications"
+            # dialog is displayed, close it if found
+            notifications_off = self.wait.until(
+                EC.element_to_be_clickable((By.CSS_SELECTOR, "._a9--._a9_1"))
+            )
             notifications_off.click()
         except NoSuchElementException:
             pass
@@ -47,19 +54,36 @@ class InstaFollower():
         self.driver.get(f"https://www.instagram.com/{TARGET}/")
         time.sleep(2)
         # Find and click on the followers list
-        followers_list = self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, f"a[href*='/{TARGET}/followers/']")))
+        followers_list = self.wait.until(
+            EC.visibility_of_element_located(
+                (By.CSS_SELECTOR, f"a[href*='/{TARGET}/followers/']")
+            )
+        )
         followers_list.click()
         time.sleep(2)
 
     def follow(self):
         # Find the "Followers" window
-        people_to_follow = self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "._acan._acap._acas._aj1-")))
-        followers_window = self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".x7r02ix.xf1ldfh.x131esax.xdajt7p.xxfnqb6.xb88tzc.xw2csxc.x1odjw0f.x5fp0pe")))
+        people_to_follow = self.wait.until(
+            EC.visibility_of_element_located(
+                (By.CSS_SELECTOR, "._acan._acap._acas._aj1-")
+            )
+        )
+        followers_window = self.wait.until(
+            EC.visibility_of_element_located(
+                (
+                    By.CSS_SELECTOR,
+                    ".x7r02ix.xf1ldfh.x131esax.xdajt7p.xxfnqb6.xb88tzc.xw2csxc.x1odjw0f.x5fp0pe"
+                )
+            )
+        )
         self.driver.execute_script("arguments[0].click();", followers_window)
 
         for _ in range(1, CYCLES):
             # Find the list of people to follow
-            people_to_follow = self.driver.find_elements(By.CSS_SELECTOR, "._acan._acap._acas._aj1-")
+            people_to_follow = self.driver.find_elements(
+                By.CSS_SELECTOR, "._acan._acap._acas._aj1-"
+            )
             for people in people_to_follow:
                 if people.text == "Follow":
                     # Click the "Follow" button to follow the person

@@ -1,5 +1,4 @@
 from turtle import Screen
-# Download pong.py (located on this repository) and move it to same folder of this file
 from pong import Paddle, Ball, Scoreboard
 import time
 
@@ -33,7 +32,10 @@ while game_running:
         ball.bounce_y()
 
     # Detect collision with the right paddle
-    if ball.distance(r_paddle) < 40 and ball.xcor() > 320 or ball.distance(l_paddle) < 40 and ball.xcor() < -320:
+    if (
+        ball.distance(r_paddle) < 40 and ball.xcor() > 320
+        or ball.distance(l_paddle) < 40 and ball.xcor() < -320
+    ):
         ball.bounce_x()
 
     # Detect when right paddle misses

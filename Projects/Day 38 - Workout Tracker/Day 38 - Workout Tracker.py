@@ -3,13 +3,25 @@ import datetime as dt
 # Clone this spreadsheet
 # https://docs.google.com/spreadsheets/d/1DHL6Y8XAHSC_KhJsa9QMekwP8b4YheWZY_sxlH3i494/edit#gid=0
 
-# Create a free account at Nutritionix API (https://www.nutritionix.com/business/api)
-# Copy your ID and KEY and paste it below as a string value for NUTRITIONIX_ID and NUTRITIONIX_KEY
 
-# Log in into https://sheety.co/ with the same Google account that you cloned the spreadsheet
-# New Project -> paste the link of your spreadsheet -> Create -> API -> Enable GET and POST
+# Create a free account at Nutritionix API
+# (https://www.nutritionix.com/business/api)
+
+# Copy your ID and KEY and paste it below as a
+# string value for NUTRITIONIX_ID and NUTRITIONIX_KEY
+
+
+# Log in into https://sheety.co/ with the same Google account
+# that you cloned the spreadsheet
+
+# New Project -> paste the link of your spreadsheet -> Create ->
+# API -> Enable GET and POST
+
 # Copy the endpoint and paste it below as a string value for SHEETY_ENDPOINT
-# Then go to Authentication -> Type Bearer (Token) -> Write a safe token -> Save Changes
+
+# Then go to Authentication -> Type Bearer (Token) ->
+# Write a safe token -> Save Changes
+
 # Copy the token and paste it below as a string value for SHEETY_TOKEN
 
 NUTRITIONIX_ID = "..."
@@ -37,15 +49,19 @@ nutritionix_params = {
     "age": 30  # Your age (integer)
 }
 
-# Send a POST request to the Nutritionix API to get exercise data based on user input
-response = requests.post(NUTRITIONIX_ENDPOINT, json=nutritionix_params, headers=nutritionix_header)
+# Send a POST request to the Nutritionix API
+# to get exercise data based on user input
+response = requests.post(
+    NUTRITIONIX_ENDPOINT, json=nutritionix_params, headers=nutritionix_header
+)
 exercises = response.json()['exercises']
 
 sheety_header = {
     "Authorization": SHEETY_TOKEN,
 }
 
-# Loop through each exercise and send a POST request to the Sheety API to add the exercise data to the spreadsheet
+# Loop through each exercise and send a POST request to the Sheety API
+# to add the exercise data to the spreadsheet
 for exercise in exercises:
     sheety_params = {
         "workout": {
@@ -57,4 +73,6 @@ for exercise in exercises:
         }
     }
 
-    new_row = requests.post(SHEETY_ENDPOINT, json=sheety_params, headers=sheety_header)
+    new_row = requests.post(
+        SHEETY_ENDPOINT, json=sheety_params, headers=sheety_header
+    )

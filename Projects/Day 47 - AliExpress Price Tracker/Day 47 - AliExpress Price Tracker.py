@@ -35,7 +35,10 @@ head_scripts = soup.head.script
 script_contents = head_scripts.get_text(strip=True)
 
 # Pattern 1 -> price
-pattern_1 = r'"defaultInstallmentForm"\s*:\s*{[^}]*"formatedAmount"\s*:\s*"R\$([^"]*)"'
+pattern_1 = (
+    r'"defaultInstallmentForm"'
+    r'\s*:\s*{[^}]*"formatedAmount"\s*:\s*"R\$([^"]*)"'
+)
 
 match = re.search(pattern_1, script_contents)
 
@@ -68,5 +71,8 @@ if price < buy_price:
         connection.sendmail(
             from_addr=YOUR_EMAIL,
             to_addrs=YOUR_EMAIL,
-            msg=f"Subject:AliExpress Price Alert!\n\n{message}\n{aliexpress_URL}".encode("utf-8")
+            msg=(
+                f"Subject:AliExpress Price Alert!\n\n{message}"
+                f"\n{aliexpress_URL}"
+            ).encode("utf-8")
         )

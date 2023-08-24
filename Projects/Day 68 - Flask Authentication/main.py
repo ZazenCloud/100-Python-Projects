@@ -1,7 +1,9 @@
-from flask import Flask, render_template, request, url_for, redirect, flash, send_from_directory
+from flask import Flask, render_template, request, url_for, redirect, flash
+from flask import send_from_directory
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
+from flask_login import UserMixin, login_user, LoginManager, login_required
+from flask_login import current_user, logout_user
 from sqlalchemy.exc import IntegrityError
 
 # Starts Flask, flask_sqlalchemy and flask_login
@@ -115,7 +117,7 @@ def login():
 @login_required
 def secrets():
     return render_template(
-        "secrets.html", 
+        "secrets.html",
         name=current_user.name,
         logged_in=True)
 

@@ -1,4 +1,4 @@
-import requests
+# import requests
 from datetime import datetime
 # This project uses the Pixela's API
 
@@ -70,17 +70,26 @@ update_params = {
 # print(response.text)
 
 ''' Step 2 -> Create your graph'''
-# response = requests.post(url=GRAPH_ENDPOINT, json=graph_params, headers=headers)
+# response = requests.post(
+#     url=GRAPH_ENDPOINT, json=graph_params, headers=headers
+# )
 # print(response.text)
 
 '''Uncomment this block to create today's info'''
-# response = requests.post(url=NEW_PIXEL_ENDPOINT, json=new_pixel_params, headers=headers)
+# response = requests.post(
+#     url=NEW_PIXEL_ENDPOINT, json=new_pixel_params, headers=headers
+# )
 # print(response.text)
 
 '''Uncomment this block to update today's info'''
-# response = requests.put(url=f"{NEW_PIXEL_ENDPOINT}/{formatted_today}", json=update_params, headers=headers)
+# response = requests.put(
+#     url=f"{NEW_PIXEL_ENDPOINT}/{formatted_today}",
+#     json=update_params, headers=headers
+# )
 # print(response.text)
 
 '''Uncomment this block to delete today's info'''
-# response = requests.delete(url=f"{NEW_PIXEL_ENDPOINT}/{formatted_today}", headers=headers)
+# response = requests.delete(
+#     url=f"{NEW_PIXEL_ENDPOINT}/{formatted_today}", headers=headers
+# )
 # print(response.text)

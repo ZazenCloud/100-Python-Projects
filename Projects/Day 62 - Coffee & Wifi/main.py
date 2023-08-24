@@ -12,21 +12,33 @@ Bootstrap(app)
 
 class CafeForm(FlaskForm):
     cafe = StringField('Cafe Name', validators=[DataRequired()])
-    location = StringField('Cafe Location on Google Maps (URL)',
-                           validators=[DataRequired(), validators.URL()])
-    opening_time = StringField('Opening Time (e.g. 8AM)',
-                               validators=[DataRequired()])
-    closing_time = StringField('Closing Time (e.g. 5:30PM)',
-                               validators=[DataRequired()])
-    coffee_rating = SelectField('Coffee Rating',
-                                choices=['☕️', '☕️☕️', '☕️☕️☕️', '☕️☕️☕️☕️', '☕️☕️☕️☕️☕️'],
-                                validators=[DataRequired()])
-    wifi_rating = SelectField('Wifi Strength Rating',
-                              choices=['✘', '💪', '💪💪', '💪💪💪', '💪💪💪💪', '💪💪💪💪💪'],
-                              validators=[DataRequired()])
-    power_rating = SelectField('Power Socket Availability',
-                               choices=['✘', '🔌', '🔌🔌', '🔌🔌🔌', '🔌🔌🔌🔌', '🔌🔌🔌🔌🔌'],
-                               validators=[DataRequired()])
+    location = StringField(
+        'Cafe Location on Google Maps (URL)',
+        validators=[DataRequired(), validators.URL()]
+    )
+    opening_time = StringField(
+        'Opening Time (e.g. 8AM)',
+        validators=[DataRequired()]
+    )
+    closing_time = StringField(
+        'Closing Time (e.g. 5:30PM)',
+        validators=[DataRequired()]
+    )
+    coffee_rating = SelectField(
+        'Coffee Rating',
+        choices=['☕️', '☕️☕️', '☕️☕️☕️', '☕️☕️☕️☕️', '☕️☕️☕️☕️☕️'],
+        validators=[DataRequired()]
+    )
+    wifi_rating = SelectField(
+        'Wifi Strength Rating',
+        choices=['✘', '💪', '💪💪', '💪💪💪', '💪💪💪💪', '💪💪💪💪💪'],
+        validators=[DataRequired()]
+    )
+    power_rating = SelectField(
+        'Power Socket Availability',
+        choices=['✘', '🔌', '🔌🔌', '🔌🔌🔌', '🔌🔌🔌🔌', '🔌🔌🔌🔌🔌'],
+        validators=[DataRequired()]
+    )
     submit = SubmitField('Submit')
 
 

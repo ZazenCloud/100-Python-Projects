@@ -45,7 +45,9 @@ donut.update_traces(
 donut.show()
 
 # Convert 'Installs' and 'Price' columns to numeric
-df_apps_clean.Installs = df_apps_clean.Installs.astype(str).str.replace(',', "")
+df_apps_clean.Installs = df_apps_clean.Installs.astype(str).str.replace(
+    ',', ""
+)
 df_apps_clean.Installs = pd.to_numeric(df_apps_clean.Installs)
 df_apps_clean.Price = df_apps_clean.Price.astype(str).str.replace('$', "")
 df_apps_clean.Price = pd.to_numeric(df_apps_clean.Price)

@@ -1,5 +1,4 @@
 from turtle import Screen
-# Download snake_proto.py (located on this repository) and move it to same folder of this file
 from snake_proto import Snake
 import time
 

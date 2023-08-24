@@ -1,7 +1,5 @@
 import turtle
 import pandas
-# Download usa_states_img.gif and usa_states.csv
-# (located on this repository) and move them to same folder of this file
 
 # Create a turtle screen
 screen = turtle.Screen()
@@ -21,8 +19,10 @@ correct_guesses = []
 # Start the game loop until all states are guessed correctly or the user exits
 while len(correct_guesses) < len(state_list):
     # Ask the user to guess a state name
-    answer = screen.textinput(title=f"{len(correct_guesses)}/{len(state_list)}",
-                              prompt="Guess a State name!").title()
+    answer = screen.textinput(
+        title=f"{len(correct_guesses)}/{len(state_list)}",
+        prompt="Guess a State name!"
+    ).title()
     if answer == "Exit":
         states_to_learn = []
         # Find the states that haven't been correctly guessed

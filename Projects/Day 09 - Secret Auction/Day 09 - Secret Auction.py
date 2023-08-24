@@ -1,4 +1,4 @@
-import os # For the clear function
+import os
 
 logo = r'''
                          ___________
@@ -14,26 +14,36 @@ logo = r'''
                       /_______________\
 '''
 
+
 def clear():
-    os.system('cls' if os.name == 'nt' else 'clear') # 'cls' for Windows / 'clear' for Unix-based systems
+    # 'cls' for Windows / 'clear' for Unix-based systems
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 
 print(logo)
 print("Welcome to the Secret Auction!")
 auction_end = False
-bids = {} # Key: name / Value: bid
+# Key: name / Value: bid
+bids = {}
 while not auction_end:
     name = input('What is your name?\n')
     price = int(input('What is your bid?\n$'))
-    bids[name] = price # Add `name: value` pair to the dictionary
+    # Add `name: value` pair to the dictionary
+    bids[name] = price
     another_bidder = input("Are there any other bidders? Type 'yes' or 'no'\n")
     if another_bidder == 'no':
-        auction_end = True # Ends loop
+        # Ends loop
+        auction_end = True
     clear()
 
-for bidder in bids: # Loops through the dictionary
+# Loops through the dictionary
+for bidder in bids:
     highest_bid = 0
-    if bids[bidder] > highest_bid: # If value is higher than previous iterations
-        highest_bid = bids[bidder] # Current value is passed to the variable `highest_bid`
-        winner = bidder # Current key is passed to the variable `winner`
-        
+    # If value is higher than previous iterations
+    if bids[bidder] > highest_bid:
+        # Current value is passed to the variable `highest_bid`
+        highest_bid = bids[bidder]
+        # Current key is passed to the variable `winner`
+        winner = bidder
+
 print(f'The winner is {winner} with a bid of ${highest_bid}')

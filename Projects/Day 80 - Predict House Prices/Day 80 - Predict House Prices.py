@@ -27,7 +27,8 @@ sns.displot(
     kde=True
 )
 plt.title(
-    f'1970s Home Values in Boston (Average: ${(1000*boston_df.PRICE.mean()):.2f})'
+    '1970s Home Values in Boston (Average: $'
+    f'{(1000*boston_df.PRICE.mean()):.2f})'
 )
 plt.xlabel("Price in $1000's")
 plt.ylabel('Number of Homes')
@@ -318,14 +319,16 @@ log_resid_skew = round(log_residuals.skew(), 2)
 # Bar + KDE Chart: Residuals Skew and Mean (Log Price Model)
 sns.displot(log_residuals, kde=True, color='navy')
 plt.title(
-    f'Log price model: Residuals Skew ({log_resid_skew}) Mean ({log_resid_mean})'
+    'Log price model: Residuals Skew '
+    f'({log_resid_skew}) Mean ({log_resid_mean})'
 )
 plt.show()
 
 # Bar + KDE Chart: Residuals Skew and Mean (Original Model)
 sns.displot(residuals, kde=True, color='indigo')
 plt.title(
-    f'Original model: Residuals Skew ({residuals_skew}) Mean ({residuals_mean})'
+    'Original model: Residuals Skew '
+    f'({residuals_skew}) Mean ({residuals_mean})'
 )
 plt.show()
 

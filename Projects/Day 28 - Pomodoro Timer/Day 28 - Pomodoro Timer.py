@@ -1,5 +1,4 @@
 import tkinter as tk
-# Download tomato.png (located on this repository) and move it to same folder of this file
 
 # Constants for colors, fonts, and time intervals
 PINK = "#e2979c"
@@ -67,7 +66,8 @@ def count_down(count):
         # With count decremented by 1
         timer = window.after(1000, count_down, count - 1)
     else:
-        # Calls the start_timer() function to move to the next section (work or break)
+        # Calls the start_timer() function to move
+        # to the next section (work or break)
         start_timer()
         # Add 1 check mark after a work session
         check_count = divmod(reps, 2)
@@ -80,12 +80,18 @@ window.title("Pomodoro Timer")
 window.config(padx=100, pady=50, bg=YELLOW)
 
 # Buttons
-start_button = tk.Button(text="Start", highlightthickness=0, command=start_timer)
+start_button = tk.Button(
+    text="Start", highlightthickness=0, command=start_timer
+)
 start_button.grid(row=2, column=0)
-reset_button = tk.Button(text="Reset", highlightthickness=0, command=reset_timer)
+reset_button = tk.Button(
+    text="Reset", highlightthickness=0, command=reset_timer
+)
 reset_button.grid(row=2, column=2)
 # Labels
-timer_label = tk.Label(text="Timer", fg=GREEN, bg=YELLOW, font=(FONT_NAME, 40, "bold"))
+timer_label = tk.Label(
+    text="Timer", fg=GREEN, bg=YELLOW, font=(FONT_NAME, 40, "bold")
+)
 timer_label.grid(row=0, column=1)
 check_mark_label = tk.Label(fg=GREEN, bg=YELLOW, font=(FONT_NAME, 15, "bold"))
 check_mark_label.grid(row=3, column=1)
@@ -93,7 +99,9 @@ check_mark_label.grid(row=3, column=1)
 canvas = tk.Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)
 tomato_img = tk.PhotoImage(file="tomato.png")
 canvas.create_image(100, 112, image=tomato_img)
-clock = canvas.create_text(100, 130, text="00:00", fill="white", font=(FONT_NAME, 35, "bold"))
+clock = canvas.create_text(
+    100, 130, text="00:00", fill="white", font=(FONT_NAME, 35, "bold")
+)
 canvas.grid(row=1, column=1)
 
 window.mainloop()

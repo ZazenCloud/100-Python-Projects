@@ -14,7 +14,10 @@ class CoffeeMaker:
         print(f"Coffee: {self.resources['coffee']}g")
 
     def is_resource_sufficient(self, drink):
-        """Returns True when order can be made, False if ingredients are insufficient."""
+        """
+        Returns True when order can be made,
+         False if ingredients are insufficient.
+        """
         can_make = True
         for item in drink.ingredients:
             if drink.ingredients[item] > self.resources[item]:
@@ -58,7 +61,10 @@ class Menu:
         return options
 
     def find_drink(self, order_name):
-        """Searches the menu for a particular drink by name. Returns that item if it exists, otherwise returns None"""
+        """
+        Searches the menu for a particular drink by name.
+         Returns that item if it exists, otherwise returns None.
+        """
         for item in self.menu:
             if item.name == order_name:
                 return item
@@ -88,7 +94,9 @@ class MoneyMachine:
         """Returns the total calculated from coins inserted."""
         print("Please insert coins.")
         for coin in self.COIN_VALUES:
-            self.money_received += int(input(f"How many {coin}?: ")) * self.COIN_VALUES[coin]
+            self.money_received += int(
+                input(f"How many {coin}?: ")
+            ) * self.COIN_VALUES[coin]
         return self.money_received
 
     def make_payment(self, cost):

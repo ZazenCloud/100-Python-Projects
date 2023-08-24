@@ -1,6 +1,6 @@
 import random
 
-logo = r'''____  ____  ____  ____  ____  _________  ____  ____  ____  _________  ____  ____  ____  ____  ____  ____ 
+logo = r'''____  ____  ____  ____  ____  _________  ____  ____  ____  _________  ____  ____  ____  ____  ____  ____
 ||G ||||U ||||E ||||S ||||S ||||       ||||T ||||H ||||E ||||       ||||N ||||U ||||M ||||B ||||E ||||R ||
 ||__||||__||||__||||__||||__||||_______||||__||||__||||__||||_______||||__||||__||||__||||__||||__||||__||
 |/__\||/__\||/__\||/__\||/__\||/_______\||/__\||/__\||/__\||/_______\||/__\||/__\||/__\||/__\||/__\||/__\|
@@ -12,6 +12,7 @@ print('Welcome to the Number Guessing Game!')
 EASY_LEVEL_ATTEMPTS = 10
 HARD_LEVEL_ATTEMPTS = 5
 
+
 def set_difficulty():
     level = input("Choose a difficulty. Type 'easy' or 'hard': ")
     if level == 'easy':
@@ -19,15 +20,12 @@ def set_difficulty():
     else:
         return HARD_LEVEL_ATTEMPTS
 
-attempts = set_difficulty()
-print("I'm thinking of a number between 1 and 100.")
-answer = random.randint(1, 100) # Randomizes a number between 1 and 100
-
-guess = 0
-end_game = False # Flag for ending the game
 
 def check_answer(guess, answer, attempts):
-    '''Checks answer against guess. Returns the number of attempts remaining.'''
+    '''
+    Checks answer against guess.
+    Returns the number of attempts remaining.
+    '''
     if guess > answer:
         print('Too high.')
         return attempts - 1
@@ -36,8 +34,21 @@ def check_answer(guess, answer, attempts):
         return attempts - 1
     else:
         print(f'You got it! The answer was {answer}.')
-        global end_game # end_game is a global variable
+        # end_game is a global variable
+        global end_game
         end_game = True
+
+
+attempts = set_difficulty()
+print("I'm thinking of a number between 1 and 100.")
+
+# Randomizes a number between 1 and 100
+answer = random.randint(1, 100)
+
+guess = 0
+
+# Flag for ending the game
+end_game = False
 
 while not end_game:
     print(f'You have {attempts} attempts remaining to guess the number.')

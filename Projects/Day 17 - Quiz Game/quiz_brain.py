@@ -22,7 +22,10 @@ class QuizBrain:
         current_question = self.question_list[self.question_number]
         self.question_number += 1
         # Prompts the user for an answer
-        user_answer = input(f'Q.{self.question_number}: {current_question.text}\nTrue or False? ').lower()
+        user_answer = input(
+            f'Q.{self.question_number}: {current_question.text}'
+            '\nTrue or False? '
+        ).lower()
         # Convert "t" to "true" and "f" to "false"
         if user_answer == "t":
             user_answer = "true"

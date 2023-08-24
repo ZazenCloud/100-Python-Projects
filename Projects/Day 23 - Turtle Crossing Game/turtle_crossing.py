@@ -47,14 +47,13 @@ class Scoreboard(Turtle):
     def score(self):
         # Update the scoreboard with the current level
         self.clear()
-        self.current_level += 1    
+        self.current_level += 1
         self.write(f"Level: {self.current_level}", align="center", font=FONT)
-    
+
     def game_over(self):
         # Display the game over message
         self.goto(0, 0)
         self.write("GAME OVER", align="center", font=FONT)
-
 
 
 COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]

@@ -1,5 +1,4 @@
 import pandas
-# Download nato_phonetic_alphabet.csv (located on this repository) and move it to same folder of this file
 data = pandas.read_csv("nato_phonetic_alphabet.csv")
 
 # Create a dictionary mapping each letter to its corresponding NATO code

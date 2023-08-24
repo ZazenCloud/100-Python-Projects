@@ -11,7 +11,9 @@ SPOTIFY_ID = ""
 song_uris = []
 
 # Prompt the user for the date they want to visit
-input_response = input("Which day of the past do you wanna visit? (DD-MM-YYYY)\n")
+input_response = input(
+    "Which day of the past do you wanna visit? (DD-MM-YYYY)\n"
+)
 split_input = input_response.split("-")
 year = split_input[2]
 month = split_input[1]
@@ -49,7 +51,7 @@ for song in song_names:
 # Create a new playlist on the user's Spotify account
 playlist = sp.user_playlist_create(
     user_id,
-    name=f"TOP 100 ({day}/{month}/{year})", 
+    name=f"TOP 100 ({day}/{month}/{year})",
     description=f"The Billboard Top 100 songs of {day}/{month}/{year}")
 
 # Add the songs to the playlist

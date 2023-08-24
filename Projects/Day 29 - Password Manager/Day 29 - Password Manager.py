@@ -3,20 +3,31 @@ from tkinter import messagebox
 from tkinter.constants import END
 import random
 import pyperclip
-# Download pass_logo.png (located on this repository)
-# And move it to same folder of this file
 
 
 def generate_password():
-    """Generates a random password and inserts it into the password_input field"""
-    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    """
+    Generates a random password and inserts it into the password_input field.
+    """
+    letters = [
+        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
+        'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B',
+        'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+        'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+    ]
     numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
     # Randomly selects letters, symbols, and numbers to create a password
-    password_list = [random.choice(letters) for _ in range(random.randint(8, 10))]
-    password_list += [random.choice(symbols) for _ in range(random.randint(2, 4))]
-    password_list += [random.choice(numbers) for _ in range(random.randint(2, 4))]
+    password_list = [
+        random.choice(letters) for _ in range(random.randint(8, 10))
+    ]
+    password_list += [
+        random.choice(symbols) for _ in range(random.randint(2, 4))
+    ]
+    password_list += [
+        random.choice(numbers) for _ in range(random.randint(2, 4))
+    ]
 
     # Shuffles the password list
     random.shuffle(password_list)
@@ -42,8 +53,11 @@ def save_data():
 
     if len(website) and len(email) and len(password):
         # Asks for confirmation to save the data
-        save_it = messagebox.askokcancel(title=website, message=f"These are the details provided: \n"
-                                         f"\nEmail: {email} \nPassword: {password} \n\nSave it?")
+        save_it = messagebox.askokcancel(
+            title=website,
+            message=f"These are the details provided: \n"
+                    f"\nEmail: {email} \nPassword: {password} \n\nSave it?"
+        )
         if save_it:
             # Appends the data to a file
             with open("password_data.txt", "a") as file:
@@ -54,7 +68,9 @@ def save_data():
             password_input.delete(0, END)
     else:
         # Shows a warning message if any of the fields are empty
-        messagebox.showwarning(title="Warning", message="Don't leave any fields empty!")
+        messagebox.showwarning(
+            title="Warning", message="Don't leave any fields empty!"
+        )
 
 
 window = tk.Tk()
@@ -80,7 +96,9 @@ password_input = tk.Entry(width=28)
 password_input.grid(row=3, column=1, padx=(0, 2))
 
 # Buttons
-password_button = tk.Button(text="Generate", width=10, command=generate_password)
+password_button = tk.Button(
+    text="Generate", width=10, command=generate_password
+)
 password_button.grid(row=3, column=2, padx=(0, 14))
 add_button = tk.Button(text="Add", width=37, command=save_data)
 add_button.grid(row=4, column=1, columnspan=2, padx=(1, 0))

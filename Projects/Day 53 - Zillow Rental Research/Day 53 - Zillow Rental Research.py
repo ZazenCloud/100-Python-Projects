@@ -74,7 +74,11 @@ for address, price, url in zip(addresses_list, prices_list, url_list):
     i = 0
     temp_tuple = (address, price, url)
     # Wait for the "Submit" button to be visible
-    submit = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".NPEfkd.RveJvd.snByac")))
+    submit = wait.until(
+        EC.visibility_of_element_located(
+            (By.CSS_SELECTOR, ".NPEfkd.RveJvd.snByac")
+        )
+    )
     inputs = driver.find_elements(By.CSS_SELECTOR, "input[type*='text']")
     for input in inputs:
         driver.execute_script("arguments[0].click();", input)

@@ -24,31 +24,67 @@ class InternetSpeedTwitterBot():
         """Open 'speedtest.net' and measure your internet speed."""
         self.driver.get("https://www.speedtest.net/")
         time.sleep(1)
-        accept_cookies = self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#onetrust-close-btn-container .banner-close-button")))
+        accept_cookies = self.wait.until(
+            EC.element_to_be_clickable(
+                (
+                    By.CSS_SELECTOR,
+                    "#onetrust-close-btn-container .banner-close-button"
+                )
+            )
+        )
         accept_cookies.click()
-        start_test = self.wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "js-start-test")))
+        start_test = self.wait.until(
+            EC.element_to_be_clickable((By.CLASS_NAME, "js-start-test"))
+        )
         start_test.click()
         # Wait for test to finish
         time.sleep(60)
-        self.down = self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".download-speed"))).text
-        self.up = self.wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "upload-speed"))).text
+        self.down = self.wait.until(
+            EC.visibility_of_element_located(
+                (By.CSS_SELECTOR, ".download-speed")
+            )
+        ).text
+        self.up = self.wait.until(
+            EC.visibility_of_element_located(
+                (By.CLASS_NAME, "upload-speed")
+            )
+        ).text
 
     def tweet_text_at_provider(self):
-        """Log in Twitter and send a complain tweet to your internet provider."""
+        """
+        Log in Twitter and send a complain tweet to your internet provider.
+        """
         self.driver.get("https://twitter.com/")
-        login = self.wait.until(EC.element_to_be_clickable((By.TAG_NAME, "input")))
+        login = self.wait.until(
+            EC.element_to_be_clickable((By.TAG_NAME, "input"))
+        )
         login.click()
         login.send_keys(TWITTER_ACCOUNT)
         login.send_keys(Keys.ENTER)
-        password = self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[autocomplete*='current-password']")))
+        password = self.wait.until(
+            EC.element_to_be_clickable(
+                (By.CSS_SELECTOR, "input[autocomplete*='current-password']")
+            )
+        )
         password.send_keys(TWITTER_PASSWORD)
         password.send_keys(Keys.ENTER)
-        tweet_text = self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".public-DraftStyleDefault-block")))
-        tweet_text.send_keys(f"Hey, @{COMPANY_ACCOUNT}!\n" +
-                             f"My internet speed is {self.down}/{self.up} (DL/UP) right now.\n" +
-                             f"Can you please explain me why?\n" +
-                             f"I pay for {PROMISED_DOWNLOAD}/{PROMISED_UPLOAD}!")
-        tweet_button = self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "div[data-testid*='tweetButtonInline']")))
+        tweet_text = self.wait.until(
+            EC.element_to_be_clickable(
+                (By.CSS_SELECTOR, ".public-DraftStyleDefault-block")
+            )
+        )
+        tweet_text.send_keys(
+            f"Hey, @{COMPANY_ACCOUNT}!\n" +
+            f"My internet speed is {self.down}/{self.up} " +
+            "(DL/UP) right now.\n" +
+            "Can you please explain me why?\n" +
+            f"I pay for {PROMISED_DOWNLOAD}/{PROMISED_UPLOAD}!"
+        )
+        tweet_button = self.wait.until(
+            EC.element_to_be_clickable(
+                (By.CSS_SELECTOR, "div[data-testid*='tweetButtonInline']")
+            )
+        )
         tweet_button.click()
 
 
