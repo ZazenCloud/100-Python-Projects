@@ -3,8 +3,7 @@ from tkinter import *
 import random
 import time
 import threading
-
-word_list = ['table', 'book', 'camel', 'tree']
+import words
 
 # Flag to indicate if the countdown has started
 countdown_started = False
@@ -52,16 +51,6 @@ def update_label(end_time):
         # schedule the next update after 1 second
         time.sleep(1)
         update_label(end_time)
-        
-def update_label(end_time):
-    # get the remaining time in seconds
-    remaining_time = int(end_time - time.time())
-    # check if the countdown is over
-    if remaining_time <= 0:
-        # set the label text to "Time's up!"
-        label.config(text="Time's up!")
-    
-        
 
 
 def start_test():
@@ -73,19 +62,20 @@ def stop_test():
 
 
 def space_action():
-    pass
+    print("SPACE")
 
+mark = 0
 
 def backspace_action():
-    pass
+    global mark
+    mark += 1
+    text_box.delete(1.0, END)
+    text_box.insert(INSERT, "\n".join([" ".join(item) for item in lines_list[mark:mark+2]])) # insert the first 2 items of the big list
+    text_box.delete("1.0 + 2 lines", END)
+    print(mark)
 
 
 # randomize list of 250 words
-
-# start button
-
-# clock
-# focus on text
 
 # every word (space), calculates score
 # only counts if word is correct
@@ -96,7 +86,15 @@ def backspace_action():
 # press backspace delete chars
 # if no chars, go back to the last word
 
-ops = random.choices(word_list, k=10)
+ops = random.choices(words.word_list, k=800)
+
+# Divide the 800 random words in 160 lists of 5 words
+num_lines = 160
+words_per_line = 5
+lines_list = [
+    ops[i * words_per_line:(i + 1) * words_per_line] for i in range(num_lines)
+]
+print(lines_list)
 
 root = Tk()
 root.title('Typing Speed Test')
@@ -106,17 +104,23 @@ time_left_label = Label(text='Time left: 60')
 time_left_label.pack()
 
 text_box = Text(wrap=WORD)
-text_box.insert(END, ops)
+text_box.insert(INSERT, "\n".join([" ".join(item) for item in lines_list[mark:mark+2]]))
+text_box.delete("1.0 + 2 lines", END) 
+# text_box.insert(END, ops)
 text_box.pack()
 
 entry_text = Entry()
 entry_text.focus()
 entry_text.pack()
 
-text_box.tag_config('green', background='green')
-text_box.tag_add('green', '1.0', '1.end')
+# text_box.tag_config('green', background='green')
+# text_box.tag_add('green', StringVar)
 
-root.bind("<Key>", lambda e: start_countdown() if e.char.isalpha() else None)
+root.bind("<Key>", lambda e: backspace_action() if e.char.isalpha() else None)
+
+# root.bind("<Space>", lambda e: space_action)
+
+# root.bind("<Backspace>", func=backspace_action)
 
 root.mainloop()
 
@@ -128,3 +132,5 @@ root.mainloop()
 # button = Button(text="Click Me", command=action)
 
 # entry.insert(END, string="Some text to begin with.")
+
+# len(current_word)
