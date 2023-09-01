@@ -10,6 +10,7 @@ from tkinter import (
     Scale,
 )
 from PIL import Image, ImageDraw, ImageFont
+import os
 
 filenames = None
 logo = None
@@ -21,8 +22,8 @@ def choose_files():
 
 
 def choose_logo():
-    global filenames
-    filenames = filedialog.askopenfilename(title="Select a Logo:")
+    global logo
+    logo = filedialog.askopenfilename(title="Select a Logo:")
 
 
 def checkbutton_text_used():
@@ -35,10 +36,6 @@ def checkbutton_image_used():
     checkbutton_text.toggle()
     choose_logo_button.config(state="normal")
     text_entry.config(state="disabled")
-
-
-def radio_used():
-    print(radio_state.get())
 
 
 def set_watermark_position(position, image_width, image_height):
@@ -87,7 +84,16 @@ def set_watermark_position(position, image_width, image_height):
         return x, y, "rm"
 
 
-def add_watermark(image, watermark, checked_state_text, radio_state, opacity):
+def add_watermark(
+    image,
+    text_watermark,
+    logo_watermark,
+    checked_state_text,
+    radio_state,
+    size,
+    opacity,
+    checked_state_save,
+):
     opened_image = Image.open(image).convert("RGBA")
 
     # Get image size
@@ -106,7 +112,7 @@ def add_watermark(image, watermark, checked_state_text, radio_state, opacity):
 
     if checked_state_text:
         # Font size
-        font_size = 100
+        font_size = int(image_height / 32) * size
 
         # For Windows, change font type to 'arial.ttf'
         font = ImageFont.truetype("arial.ttf", font_size)
@@ -114,7 +120,7 @@ def add_watermark(image, watermark, checked_state_text, radio_state, opacity):
         # Add the watermark
         draw.text(
             (x, y),
-            watermark,
+            text_watermark,
             font=font,
             fill=(255, 255, 255, int(255 * (opacity / 100))),
             stroke_width=5,
@@ -122,13 +128,28 @@ def add_watermark(image, watermark, checked_state_text, radio_state, opacity):
             anchor=anchor,
         )
     else:
-        pass
+        while logo_watermark is None:
+            choose_logo()
+
+        logo_watermark = Image.open(logo_watermark).convert("RGBA")
+
+        logo_width, logo_height = logo_watermark.size
+
+        new_logo_size = (int(logo_width / 32) * size, int(logo_height / 32) * size)
+
+        resized_logo = logo_watermark.resize(new_logo_size, Image.LANCZOS)
+
+        # TODO: Enable logo opacity
+        # TODO: Better logo positioning
+        transparent_image.paste(resized_logo, (x, y))
 
     combined_image = Image.alpha_composite(
         opened_image.convert("RGBA"), transparent_image
     )
 
-    # combined_image.save("abc.png", "PNG")
+    if checked_state_save:
+        image_name_without_extension = os.path.splitext(image)[0]
+        combined_image.save(image_name_without_extension + "_watermarked.png", "PNG")
 
     # Show the new image
     combined_image.show()
@@ -139,9 +160,12 @@ def watermark_files():
         add_watermark(
             file,
             text_entry.get(),
+            logo,
             checked_state_text.get(),
             radio_state.get(),
+            size_state.get(),
             opacity_state.get(),
+            checked_state_save.get(),
         )
 
 
@@ -162,28 +186,13 @@ position_label.pack()
 
 # Variable to hold on to which radio button value is checked
 radio_state = IntVar(value=4)
-
-radiobutton1 = Radiobutton(
-    text="Top Left", value=1, variable=radio_state, command=radio_used
-)
-radiobutton2 = Radiobutton(
-    text="Top Center", value=2, variable=radio_state, command=radio_used
-)
-radiobutton3 = Radiobutton(
-    text="Top Right", value=3, variable=radio_state, command=radio_used
-)
-radiobutton4 = Radiobutton(
-    text="Center", value=4, variable=radio_state, command=radio_used
-)
-radiobutton5 = Radiobutton(
-    text="Bottom Left", value=5, variable=radio_state, command=radio_used
-)
-radiobutton6 = Radiobutton(
-    text="Bottom Center", value=6, variable=radio_state, command=radio_used
-)
-radiobutton7 = Radiobutton(
-    text="Bottom Right", value=7, variable=radio_state, command=radio_used
-)
+radiobutton1 = Radiobutton(text="Top Left", value=1, variable=radio_state)
+radiobutton2 = Radiobutton(text="Top Center", value=2, variable=radio_state)
+radiobutton3 = Radiobutton(text="Top Right", value=3, variable=radio_state)
+radiobutton4 = Radiobutton(text="Center", value=4, variable=radio_state)
+radiobutton5 = Radiobutton(text="Bottom Left", value=5, variable=radio_state)
+radiobutton6 = Radiobutton(text="Bottom Center", value=6, variable=radio_state)
+radiobutton7 = Radiobutton(text="Bottom Right", value=7, variable=radio_state)
 radiobutton1.pack()
 radiobutton2.pack()
 radiobutton3.pack()
@@ -210,7 +219,6 @@ checked_state_image = IntVar()
 checkbutton_image = Checkbutton(
     text="Image?", variable=checked_state_image, command=checkbutton_image_used
 )
-checked_state_image.get()
 checkbutton_image.pack()
 
 choose_logo_button = Button(text="Choose Logo", state="disabled", command=choose_logo)
@@ -239,12 +247,6 @@ process_button.pack()
 
 checked_state_save = IntVar(value=0)
 checkbutton_save = Checkbutton(text="Save to Disk?", variable=checked_state_save)
-# checked_state_text.get()
 checkbutton_save.pack()
-
-checked_state_show = IntVar(value=1)
-checkbutton_show = Checkbutton(text="Show After?", variable=checked_state_show)
-# checked_state_text.get()
-checkbutton_show.pack()
 
 root.mainloop()
